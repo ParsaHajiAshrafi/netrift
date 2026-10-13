@@ -1,0 +1,26 @@
+name: Feature request
+description: Propose a focused diagnostic capability
+title: "[Feature]: "
+labels: [enhancement]
+body:
+  - type: textarea
+    id: failure
+    attributes:
+      label: Failure scenario
+      description: Which real network problem is currently hard to diagnose?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence NetRift should collect
+      description: How can it distinguish this cause from adjacent failure layers?
+    validations:
+      required: true
+  - type: textarea
+    id: privacy
+    attributes:
+      label: Privacy considerations
+      description: Could this expose private addresses, credentials, or browsing behavior?
+    validations:
+      required: true

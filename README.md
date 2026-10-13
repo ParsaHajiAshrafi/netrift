@@ -11,6 +11,8 @@
 
 ---
 
+![NetRift live dashboard](assets/netrift-dashboard.png)
+
 Your AI agent says `ERR_NETWORK_CHANGED`. The terminal says a stream was destroyed. Everything works again before you can inspect it.
 
 **NetRift keeps the black box running.** It samples the layers that matter, notices when the network signature changes, and gives you a clean local dashboard plus a redacted support report.
@@ -18,12 +20,18 @@ Your AI agent says `ERR_NETWORK_CHANGED`. The terminal says a stream was destroy
 ## Start in one command
 
 ```bash
-npx netrift
+npx --yes github:ParsaHajiAshrafi/netrift
 ```
 
 Then open **http://localhost:4177**. No sign-up, API key, database, Docker or cloud service.
 
-> Until the npm package is released, clone the repository and run `npm start`.
+Or install from source:
+
+```bash
+git clone https://github.com/ParsaHajiAshrafi/netrift.git
+cd netrift
+npm start
+```
 
 ## What it catches
 
@@ -71,7 +79,7 @@ Speed tests answer “how fast is the connection?” NetRift answers **“what c
 
 ## Contributing
 
-Bug reports and small, focused pull requests are welcome. Please avoid adding telemetry or cloud requirements. Run the cross-platform checks before opening a PR:
+Bug reports and small, focused pull requests are welcome. Read [CONTRIBUTING.md](CONTRIBUTING.md), and please avoid adding telemetry or cloud requirements. Run the cross-platform checks before opening a PR:
 
 ```bash
 npm test

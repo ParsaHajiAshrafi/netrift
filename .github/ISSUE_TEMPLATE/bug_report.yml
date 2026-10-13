@@ -1,0 +1,34 @@
+name: Bug report
+description: Report a reproducible NetRift problem
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: "Thanks for reporting a bug. Remove credentials and private network details before posting."
+  - type: input
+    id: version
+    attributes:
+      label: NetRift version or commit
+      placeholder: v0.1.0 or commit SHA
+    validations:
+      required: true
+  - type: dropdown
+    id: platform
+    attributes:
+      label: Operating system
+      options: [Windows, macOS, Linux, Other]
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Reproduction steps
+      description: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Redacted diagnostic evidence
+      description: Paste only data you have reviewed and are comfortable making public.
