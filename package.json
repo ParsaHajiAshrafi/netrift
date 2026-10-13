@@ -1,0 +1,35 @@
+{
+  "name": "netrift",
+  "version": "0.1.0",
+  "description": "A local-first network flight recorder for developers. Catch VPN, DNS, proxy, TLS and WebSocket failures as they happen.",
+  "type": "module",
+  "bin": {
+    "netrift": "./src/cli.mjs"
+  },
+  "scripts": {
+    "start": "node src/cli.mjs",
+    "check": "node --check src/cli.mjs && node --check src/diagnostics.mjs && node --check src/server.mjs",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "keywords": [
+    "network",
+    "diagnostics",
+    "vpn",
+    "dns",
+    "websocket",
+    "developer-tools",
+    "local-first",
+    "cli"
+  ],
+  "author": "Parsa HajiAshrafi",
+  "license": "MIT",
+  "files": [
+    "src",
+    "public",
+    "README.md",
+    "LICENSE"
+  ]
+}

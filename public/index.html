@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#071016">
+  <title>NetRift — Network Flight Recorder</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="grain"></div>
+  <header>
+    <div class="brand"><img src="/logo.svg" alt=""><div><strong>NetRift</strong><span>network flight recorder</span></div></div>
+    <div class="header-actions"><span class="privacy">● LOCAL ONLY</span><a class="button ghost" href="/api/report">Export report</a></div>
+  </header>
+  <main>
+    <section class="hero">
+      <div>
+        <div class="eyebrow"><span id="pulse"></span> LIVE DIAGNOSTICS</div>
+        <h1>Catch the network change<br>that <em>broke your flow.</em></h1>
+        <p>VPN flips, DNS stalls, proxy leaks and endpoint failures — captured in one private timeline while you work.</p>
+      </div>
+      <div class="score-wrap"><div class="score" id="score">--</div><span>NETWORK HEALTH</span></div>
+    </section>
+    <section class="status-card" id="status-card">
+      <div class="status-icon">✓</div>
+      <div><span>CURRENT DIAGNOSIS</span><h2 id="diagnosis">Starting probes…</h2><p id="timestamp">Waiting for the first snapshot</p></div>
+      <div class="signature"><span>STATE CHANGES</span><strong id="changes">0</strong></div>
+    </section>
+    <section class="metrics">
+      <article><span>DNS LOOKUP</span><strong id="dns">--</strong><small id="dns-state">github.com</small></article>
+      <article><span>DIRECT TCP</span><strong id="tcp">--</strong><small>1.1.1.1:443</small></article>
+      <article><span>ACTIVE LINKS</span><strong id="links">--</strong><small id="link-names">detecting</small></article>
+      <article><span>VPN / TUNNEL</span><strong id="vpn">--</strong><small id="vpn-names">interface scan</small></article>
+    </section>
+    <section class="grid">
+      <article class="panel timeline-panel">
+        <div class="panel-head"><div><span>LATENCY TIMELINE</span><h3>Last 10 minutes</h3></div><div class="legend"><i></i> DNS <i></i> TCP</div></div>
+        <svg id="chart" viewBox="0 0 900 240" preserveAspectRatio="none" aria-label="Latency chart"></svg>
+      </article>
+      <article class="panel endpoints-panel">
+        <div class="panel-head"><div><span>ENDPOINT PROBES</span><h3>Developer essentials</h3></div></div>
+        <div id="endpoints" class="endpoint-list"><div class="skeleton"></div><div class="skeleton"></div><div class="skeleton"></div></div>
+      </article>
+    </section>
+    <section class="panel changes-panel">
+      <div class="panel-head"><div><span>BLACK BOX</span><h3>Network change log</h3></div><span class="recording">REC</span></div>
+      <div id="log" class="log"><div class="empty">No changes recorded yet. Keep this tab open while you work.</div></div>
+    </section>
+  </main>
+  <footer><span>NetRift runs on localhost. Probe results never leave your machine.</span><span>Open source · MIT</span></footer>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>
